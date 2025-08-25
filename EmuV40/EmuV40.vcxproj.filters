@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ay8910.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="console.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cpu.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="disasm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gamepad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="i8253.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="i8255.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="i8259.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="joystick.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="kb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="parsecl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ports.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ppu.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ppu_old.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="timing.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tms9918a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tms9918a_old.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="v40io.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="v9938.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vera.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vera_old.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ay8910.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="console.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cpu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="debug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="disasm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gamepad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="glue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="i8253.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="i8255.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="i8259.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="joystick.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mutex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="parsecl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ports.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ppu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ppu_old.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="timing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tms9918a.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tms9918a_old.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="v40io.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="v9938.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vera_old.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
