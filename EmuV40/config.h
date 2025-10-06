@@ -98,6 +98,13 @@
 #define AUDIO_DEFAULT_SAMPLE_RATE 48000
 #define AUDIO_DEFAULT_LATENCY 100
 
+#	define LIKELY(__x__)	(__x__)
+#	define UNLIKELY(__x__)	(__x__)
+#	define INLINE		inline
+#	define UNREACHABLE()	UNREACHABLE_FATAL_ERROR()
+#	define	DIRSEP_STR	"\\"
+#	define	DIRSEP_CHR	'\\'
+
 //#define DEBUG_BLASTER
 //#define DEBUG_DMA
 
@@ -107,40 +114,8 @@
 // End of configuration block, do not modify these
 // -----------------------------------------------
 
-#ifdef DO_NOT_FORCE_UNREACHABLE
-extern void UNREACHABLE_FATAL_ERROR(void);
-#endif
-
-#ifdef _WIN32
-#	define	DIRSEP_STR	"\\"
-#	define	DIRSEP_CHR	'\\'
-#else
-#	define	DIRSEP_STR	"/"
-#	define	DIRSEP_CHR	'/'
-#endif
-
-#ifdef __GNUC__
-#	define LIKELY(__x__)		__builtin_expect(!!(__x__), 1)
-#	define UNLIKELY(__x__)		__builtin_expect(!!(__x__), 0)
-#	ifdef DO_NOT_FORCE_UNREACHABLE
-#		define UNREACHABLE()	UNREACHABLE_FATAL_ERROR()
-#	else
-#		define UNREACHABLE()	__builtin_unreachable()
-#	endif
-#	ifdef DO_NOT_FORCE_INLINE
-#		define INLINE		inline
-#	else
-#		define INLINE		__attribute__ ((__always_inline__)) inline
-#	endif
-#else
-#	define LIKELY(__x__)	(__x__)
-#	define UNLIKELY(__x__)	(__x__)
-#	define INLINE		inline
-#	define UNREACHABLE()	UNREACHABLE_FATAL_ERROR()
-#endif
-
-#if defined(USE_KVM) && !defined(__linux__)
-#undef USE_KVM
-#endif
+//#ifdef DO_NOT_FORCE_UNREACHABLE
+//extern void UNREACHABLE_FATAL_ERROR(void);
+//#endif
 
 #endif

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -138,6 +138,7 @@
     <ClCompile Include="cpu.c" />
     <ClCompile Include="debug.c" />
     <ClCompile Include="disasm.c" />
+    <ClCompile Include="f18a.c" />
     <ClCompile Include="gamepad.c" />
     <ClCompile Include="i8253.c" />
     <ClCompile Include="i8255.c" />
@@ -151,11 +152,8 @@
     <ClCompile Include="ppu_old.c" />
     <ClCompile Include="timing.c" />
     <ClCompile Include="tms9918a.c" />
-    <ClCompile Include="tms9918a_old.c" />
     <ClCompile Include="v40io.c" />
-    <ClCompile Include="v9938.c" />
     <ClCompile Include="vera.c" />
-    <ClCompile Include="vera_old.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ay8910.h" />
@@ -164,6 +162,7 @@
     <ClInclude Include="cpu.h" />
     <ClInclude Include="debug.h" />
     <ClInclude Include="disasm.h" />
+    <ClInclude Include="f18a.h" />
     <ClInclude Include="gamepad.h" />
     <ClInclude Include="glue.h" />
     <ClInclude Include="i8253.h" />
@@ -178,12 +177,9 @@
     <ClInclude Include="ppu_old.h" />
     <ClInclude Include="timing.h" />
     <ClInclude Include="tms9918a.h" />
-    <ClInclude Include="tms9918a_old.h" />
     <ClInclude Include="types.h" />
     <ClInclude Include="v40io.h" />
-    <ClInclude Include="v9938.h" />
     <ClInclude Include="vera.h" />
-    <ClInclude Include="vera_old.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

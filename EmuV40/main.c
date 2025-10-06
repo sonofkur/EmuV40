@@ -25,7 +25,8 @@
 #include "timing.h"
 #include "ay8910.h"
 #include "tms9918a.h"
-//#include "tms9918a.h"
+
+#include "f18a.h"
 
 //#define USE_VERA
 #define USE_TMS9918A
@@ -247,20 +248,6 @@ const int fm_midi_notes[] = {//MIDI note number
   0//off
 };
 
-void ayw(uint8_t reg, uint8_t data) {
-    outAY8910(0x01, reg);
-    outAY8910(0x00, data);
-}
-
-void load_test_snd_data() {
-    ayw(0x07, 0xC7);
-    ayw(0x08, 0x0F);
-    ayw(0x09, 0x0F);
-    ayw(0x0A, 0x0F);
-    ayw(0x00, fm_midi_notes[60] & 0xFF);
-    ayw(0x01, (fm_midi_notes[60] >> 8) & 0x0F);
-}
-
 void emu_init() {
 
     cpu_reset();
@@ -330,7 +317,8 @@ void emu_init() {
     perfFreq = (double)SDL_GetPerformanceFrequency();
 
     //TEST
-    tmsInitialiseText(tmsVDP.vdp);
+    //tmsInitialiseText(tmsVDP.vdp);
+    VDPinit();
 }
 
 void emu_tms9918a_tick() {
@@ -351,7 +339,7 @@ void emu_tms9918a_tick() {
     while ((currentTime = (double)SDL_GetPerformanceCounter() / perfFreq) < lastTime);
 
     //tick devices
-    tickTMS9918A(deltaClockTicks, (float)deltaTime);
+    //tickTMS9918A(deltaClockTicks, (float)deltaTime);
 
     /*for (size_t i = 0; i < deviceCount; ++i)
     {
@@ -383,7 +371,8 @@ void emu_reset() {
 #endif
 
 #ifdef USE_TMS9918A
-    resetTMS9918A();
+    //resetTMS9918A();
+    VDPreset(true);
 #endif
     
     resetAY8910();
@@ -435,7 +424,7 @@ void emu_loop() {
 
 #ifdef USE_TMS9918A
 
-        emu_tms9918a_tick();
+        //emu_tms9918a_tick();
         
 #endif
         if (cpu.hltstate) {
@@ -447,7 +436,7 @@ void emu_loop() {
 }
 
 static void doRender() {
-    renderTMS9918A();
+    //renderTMS9918A();
 }
 
 static void doEvents() {
@@ -482,7 +471,7 @@ static void doEvents() {
 
 void emu_loop2() {
     static uint32_t lastRenderTicks = 0;
-    emu_tms9918a_tick();
+    //emu_tms9918a_tick();
     ++tickCount;
 
     uint32_t currentTicks = SDL_GetTicks();
@@ -510,7 +499,8 @@ void emu_destroy() {
 #endif
 
 #ifdef USE_TMS9918A
-    destroyTMS9918A();
+    //destroyTMS9918A();
+    VDPshutdown();
 #endif
 
 }

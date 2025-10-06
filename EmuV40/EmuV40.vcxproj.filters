@@ -69,19 +69,13 @@
     <ClCompile Include="tms9918a.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="tms9918a_old.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="v40io.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="v9938.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="vera.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="vera_old.c">
+    <ClCompile Include="f18a.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -146,22 +140,16 @@
     <ClInclude Include="tms9918a.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="tms9918a_old.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="v40io.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="v9938.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="vera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vera_old.h">
+    <ClInclude Include="f18a.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
