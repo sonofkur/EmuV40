@@ -2,13 +2,9 @@
 #include <SDL.h>
 #include <stdint.h>
 #include <stdio.h>
-#ifdef _WIN32
 #include <windows.h>
 LARGE_INTEGER queryperf;
-#else
-#include <sys/time.h>
-static struct timeval tv;
-#endif
+
 
 #include "timing.h"
 
@@ -33,16 +29,10 @@ static uint16_t pit0counter = 65535;
 
 void inittiming(void)
 {
-#ifdef _WIN32
 	QueryPerformanceFrequency(&queryperf);
 	hostfreq = queryperf.QuadPart;
 	QueryPerformanceCounter(&queryperf);
 	curtick = queryperf.QuadPart;
-#else
-	hostfreq = 1000000;
-	gettimeofday(&tv, NULL);
-	curtick = (uint64_t)tv.tv_sec * (uint64_t)1000000 + (uint64_t)tv.tv_usec;
-#endif
 	lasti8253tick = lastblastertick = lastadlibtick = lastssourcetick = lastsampletick = lastscanlinetick = lasttick = curtick;
 	scanlinetiming = hostfreq / 31500;
 	ssourceticks = hostfreq / 8000;
@@ -50,7 +40,7 @@ void inittiming(void)
 	/*if (doaudio)
 		sampleticks = hostfreq / gensamplerate;
 	else*/
-		sampleticks = -1;
+	sampleticks = -1;
 	i8253tickgap = hostfreq / 119318;
 }
 
@@ -58,13 +48,9 @@ void inittiming(void)
 
 void timing(void)
 {
-#ifdef _WIN32
 	QueryPerformanceCounter(&queryperf);
 	curtick = queryperf.QuadPart;
-#else
-	gettimeofday(&tv, NULL);
-	curtick = (uint64_t)tv.tv_sec * (uint64_t)1000000 + (uint64_t)tv.tv_usec;
-#endif
+
 	/*if (curtick >= (lastscanlinetick + scanlinetiming)) {
 		curscanline = (curscanline + 1) % 525;
 		if (curscanline > 479)

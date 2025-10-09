@@ -3,7 +3,8 @@
 #include "v40io.h"
 #include "ports.h"
 #include "i8259.h"
-#include "i8253.h"
+//#include "i8253.h"
+#include "pit.h"
 //#include "i8237.h"
 
 struct structv40io v40;
@@ -69,8 +70,8 @@ static void outv40io(uint16_t portnum, uint8_t value) {
 		v40.tulal = value;
 		beginAddr = ((v40.opha << 8) | (v40.tulal));
 		endAddr = beginAddr + 3;
-		set_port_write_redirector(beginAddr, endAddr, &out8253);
-		set_port_read_redirector(beginAddr, endAddr, &in8253);
+		set_port_write_redirector(beginAddr, endAddr, &outPIT);
+		set_port_read_redirector(beginAddr, endAddr, &inPIT);
 		break;
 	case 0x0A:
 		v40.iula = value;

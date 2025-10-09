@@ -159,10 +159,10 @@ int bInterleaveGPU = 1;						// whether to run the GPU and the CPU together (imp
 int vdpaccess;								// VDP address write flipflop (low/high)
 int vdpwroteaddress;						// VDP (instruction) countdown after writing an address (weak test)
 int vdpscanline;							// current line being processed, 0-262
-											// I think it's more or less right:
-											// 0-26 = top blanking
-											// 27-219 = 192 lines of display
-											// 220-261 = bottom blanking + vblank
+// I think it's more or less right:
+// 0-26 = top blanking
+// 27-219 = 192 lines of display
+// 220-261 = bottom blanking + vblank
 int FilterMode = 0;							// Current filter mode
 int nDefaultScreenScale = 1;				// default screen scale multiplier
 int nXSize = 256, nYSize = 192;				// custom sizing
@@ -211,8 +211,7 @@ SDL_Texture* texture;
 // Get table addresses from Registers
 // We return reg0 since we do the bitmap filter here now
 //////////////////////////////////////////////////////////
-int gettables(int isLayer2)
-{
+int gettables(int isLayer2) {
 	int reg0 = VDPREG[0];
 	//if (nSystem == 0) {
 	//	// disable bitmap for 99/4
@@ -328,8 +327,7 @@ void VDPreset(bool isCold) {
 ////////////////////////////////////////////////////////////
 // Startup and run VDP graphics interface
 ////////////////////////////////////////////////////////////
-void VDPinit()
-{
+void VDPinit() {
 
 	uint32_t window_flags = SDL_WINDOW_ALLOW_HIGHDPI;
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "best");
@@ -341,7 +339,7 @@ void VDPinit()
 	texture = SDL_CreateTexture(renderer,
 		SDL_PIXELFORMAT_RGBA8888,
 		SDL_TEXTUREACCESS_STREAMING,
-		VDP_DISPLAY_WIDTH, 
+		VDP_DISPLAY_WIDTH,
 		VDP_DISPLAY_HEIGHT);
 	memset(framedata, 0, VDP_DISPLAY_WIDTH * VDP_DISPLAY_HEIGHT);
 
@@ -605,8 +603,7 @@ char VDPGetChar(int x, int y, int width, int height) {
 // Perform drawing of a single line
 // Determines which screen mode to draw
 //////////////////////////////////////////////////////////
-void VDPdisplay(int scanline)
-{
+void VDPdisplay(int scanline) {
 	int idx;
 	long longcol;
 	long* plong;
@@ -734,8 +731,7 @@ void VDPdisplay(int scanline)
 // Perform drawing by elapsed CPU time
 // Determines which screen mode to draw, and where
 //////////////////////////////////////////////////////////
-void updateVDP(int cycleCount)
-{
+void updateVDP(int cycleCount) {
 	static double nCycles = 0;
 
 	// Do we need to care about hzRate? I think we just
@@ -876,8 +872,7 @@ void vdpForceFrame() {
 //////////////////////////////////////////////////////
 // Draw a debug screen 
 //////////////////////////////////////////////////////
-void draw_debug()
-{
+void draw_debug() {
 	//if (NULL != dbgWnd) {
 	//	//SetEvent(hDebugWindowUpdateEvent);
 	//}
@@ -887,8 +882,7 @@ void draw_debug()
 // Draw graphics mode
 // Layer 2 for F18A second tile layer!
 /////////////////////////////////////////////////////////
-void VDPgraphics(int scanline, int isLayer2)
-{
+void VDPgraphics(int scanline, int isLayer2) {
 	int t, o;				// temp variables
 	int i2;					// temp variables
 	int p_add;
@@ -988,8 +982,7 @@ void VDPgraphics(int scanline, int isLayer2)
 /////////////////////////////////////////////////////////
 // Draw bitmap graphics mode
 /////////////////////////////////////////////////////////
-void VDPgraphicsII(int scanline, int isLayer2)
-{
+void VDPgraphicsII(int scanline, int isLayer2) {
 	int t, o;				// temp variables
 	int i2;					// temp variables
 	int p_add, c_add;
@@ -1069,8 +1062,7 @@ void VDPgraphicsII(int scanline, int isLayer2)
 ////////////////////////////////////////////////////////////////////////
 // Draw text mode 40x24
 ////////////////////////////////////////////////////////////////////////
-void VDPtext(int scanline, int isLayer2)
-{
+void VDPtext(int scanline, int isLayer2) {
 	int t, o;
 	int i2;
 	int fgc, bgc, p_add;
@@ -1157,8 +1149,7 @@ void VDPtext(int scanline, int isLayer2)
 ////////////////////////////////////////////////////////////////////////
 // Draw bitmap text mode 40x24
 ////////////////////////////////////////////////////////////////////////
-void VDPtextII(int scanline, int isLayer2)
-{
+void VDPtextII(int scanline, int isLayer2) {
 	int t, o;
 	int i2;
 	int fgc, bgc, p_add;
@@ -1235,8 +1226,7 @@ void VDPtextII(int scanline, int isLayer2)
 ////////////////////////////////////////////////////////////////////////
 // Draw text mode 80x24 (note: 80x26.5 mode not supported, blink not supported)
 ////////////////////////////////////////////////////////////////////////
-void VDPtext80(int scanline, int isLayer2)
-{
+void VDPtext80(int scanline, int isLayer2) {
 	int t, o;
 	int i2;
 	int fgc, bgc, p_add;
@@ -1323,8 +1313,7 @@ void VDPtext80(int scanline, int isLayer2)
 ////////////////////////////////////////////////////////////////////////
 // Draw Illegal mode (similar to text mode)
 ////////////////////////////////////////////////////////////////////////
-void VDPillegal(int scanline, int isLayer2)
-{
+void VDPillegal(int scanline, int isLayer2) {
 	int t;
 	int i2;
 	int fgc, bgc;
@@ -1378,8 +1367,7 @@ void VDPillegal(int scanline, int isLayer2)
 /////////////////////////////////////////////////////
 // Draw Multicolor Mode
 /////////////////////////////////////////////////////
-void VDPmulticolor(int scanline, int isLayer2)
-{
+void VDPmulticolor(int scanline, int isLayer2) {
 	int o;				// temp variables
 	int i2;				// temp variables
 	int p_add;
@@ -1460,8 +1448,7 @@ void VDPmulticolor(int scanline, int isLayer2)
 // Draw Bitmap Multicolor Mode
 // TODO not proven to be correct anymore
 /////////////////////////////////////////////////////
-void VDPmulticolorII(int scanline, int isLayer2)
-{
+void VDPmulticolorII(int scanline, int isLayer2) {
 	int o;						// temp variables
 	int i2;						// temp variables
 	int p_add;
@@ -1639,8 +1626,7 @@ void renderBML(int y) {
 // layer for F18A, treating it as a big sprite. This is
 // the only place we can do that and get priorities right
 //////////////////////////////////////////////////////////
-void DrawSprites(int scanline)
-{
+void DrawSprites(int scanline) {
 	int i1, i2, i3, xx, yy, pat, col, p_add, t, sc;
 	int highest;
 	int curSAL;
@@ -1721,8 +1707,7 @@ void DrawSprites(int scanline)
 	for (i1 = 0; i1 < 32; i1++)			// 32 sprites 
 	{
 		yy = VDP[SAL + (i1 << 2)];
-		if (yy == 0xd0)
-		{
+		if (yy == 0xd0) {
 			if (i1 - 1 < highest) {
 				highest = i1 - 1;
 			}
@@ -1774,8 +1759,7 @@ void DrawSprites(int scanline)
 	}
 
 	// now draw
-	for (i1 = highest; i1 >= 0; i1--)
-	{
+	for (i1 = highest; i1 >= 0; i1--) {
 		curSAL = SAL + (i1 << 2);
 		yy = VDP[curSAL++] + 1;				// sprite Y, it's stupid, cause 255 is line 0 
 		if (yy > 225) yy -= 256;			// fade in from top: TODO: is this right??
@@ -1808,8 +1792,7 @@ void DrawSprites(int scanline)
 		int F18ASpriteColorLine[8]; // Colors indices for each of the 8 pixels in a sprite scan line
 
 		if (VDPREG[1] & 0x01) {		// magnified sprites
-			for (i3 = 0; i3 < 16; i3++)
-			{
+			for (i3 = 0; i3 < 16; i3++) {
 				t = pixelMask(p_add, F18ASpriteColorLine);	// Modified by RasmusM. Sets up the F18ASpriteColorLine[] array.
 
 				if ((!bSkipScanLine[i1][sc]) && (yy + i3 == scanline)) {
@@ -1897,8 +1880,7 @@ void DrawSprites(int scanline)
 			}
 		}
 		else {
-			for (i3 = 0; i3 < 8; i3++)
-			{
+			for (i3 = 0; i3 < 8; i3++) {
 				t = pixelMask(p_add++, F18ASpriteColorLine);	// Modified by RasmusM
 
 				if ((!bSkipScanLine[i1][sc]) && (yy + i3 == scanline)) {
@@ -2007,24 +1989,21 @@ void DrawSprites(int scanline)
 ////////////////////////////////////////////////////////////
 // Draw a pixel onto the backbuffer surface
 ////////////////////////////////////////////////////////////
-void pixel(int x, int y, int c)
-{
+void pixel(int x, int y, int c) {
 	framedata[((199 - y) << 8) + ((199 - y) << 4) + x + 8] = GETPALETTEVALUE(c);
 }
 
 ////////////////////////////////////////////////////////////
 // Draw a pixel onto the backbuffer surface in 80 column mode
 ////////////////////////////////////////////////////////////
-void pixel80(int x, int y, int c)
-{
+void pixel80(int x, int y, int c) {
 	framedata[((199 - y) << 9) + ((199 - y) << 4) + x + 8] = GETPALETTEVALUE(c);
 }
 
 ////////////////////////////////////////////////////////////
 // Draw a range-checked pixel onto the backbuffer surface
 ////////////////////////////////////////////////////////////
-void spritepixel(int x, int y, int c)
-{
+void spritepixel(int x, int y, int c) {
 	if ((y > 191) || (y < 0)) return;
 	if ((VDPREG[1] & 0x10) == 0) {
 		// normal modes
@@ -2052,8 +2031,7 @@ void spritepixel(int x, int y, int c)
 ////////////////////////////////////////////////////////////
 // Draw a magnified pixel onto the backbuffer surface
 ////////////////////////////////////////////////////////////
-void bigpixel(int x, int y, int c)
-{
+void bigpixel(int x, int y, int c) {
 	spritepixel(x, y, c);
 	spritepixel(x + 1, y, c);
 	//	spritepixel(x,y+1,c);
@@ -2063,8 +2041,7 @@ void bigpixel(int x, int y, int c)
 ////////////////////////////////////////////////////////////
 // Pixel mask
 ////////////////////////////////////////////////////////////
-int pixelMask(int addr, int F18ASpriteColorLine[])
-{
+int pixelMask(int addr, int F18ASpriteColorLine[]) {
 	int t = VDP[addr];
 	if (F18AECModeSprite > 0) {
 		for (int pix = 0; pix < 8; pix++) {

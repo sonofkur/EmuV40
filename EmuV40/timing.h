@@ -1,5 +1,5 @@
-#ifndef FAKE86_TIMING_H_INCLUDED
-#define FAKE86_TIMING_H_INCLUDED
+#ifndef TIMING_H
+#define TIMING_H
 
 //uint64_t sampleticks, lastsampletick, ssourceticks, lastssourcetick, adlibticks, lastadlibtick, lastblastertick, gensamplerate;
 extern uint64_t gensamplerate;

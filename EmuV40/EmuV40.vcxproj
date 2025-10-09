@@ -71,12 +71,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\libs\SDL2-2.32.8\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\libs\SDL2-2.32.8\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\git\EmuV40\EmuV40\libs\SDL2-2.32.8\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\git\EmuV40\EmuV40\libs\SDL2-2.32.8\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\libs\SDL2-2.32.8\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\libs\SDL2-2.32.8\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\git\EmuV40\EmuV40\libs\SDL2-2.32.8\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\git\EmuV40\EmuV40\libs\SDL2-2.32.8\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -138,7 +138,9 @@
     <ClCompile Include="cpu.c" />
     <ClCompile Include="debug.c" />
     <ClCompile Include="disasm.c" />
+    <ClCompile Include="drive.c" />
     <ClCompile Include="f18a.c" />
+    <ClCompile Include="fdc.c" />
     <ClCompile Include="gamepad.c" />
     <ClCompile Include="i8253.c" />
     <ClCompile Include="i8255.c" />
@@ -147,6 +149,7 @@
     <ClCompile Include="kb.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="parsecl.c" />
+    <ClCompile Include="pit.c" />
     <ClCompile Include="ports.c" />
     <ClCompile Include="ppu.c" />
     <ClCompile Include="ppu_old.c" />
@@ -162,7 +165,9 @@
     <ClInclude Include="cpu.h" />
     <ClInclude Include="debug.h" />
     <ClInclude Include="disasm.h" />
+    <ClInclude Include="drive.h" />
     <ClInclude Include="f18a.h" />
+    <ClInclude Include="fdc.h" />
     <ClInclude Include="gamepad.h" />
     <ClInclude Include="glue.h" />
     <ClInclude Include="i8253.h" />
@@ -172,12 +177,14 @@
     <ClInclude Include="kb.h" />
     <ClInclude Include="mutex.h" />
     <ClInclude Include="parsecl.h" />
+    <ClInclude Include="pit.h" />
     <ClInclude Include="ports.h" />
     <ClInclude Include="ppu.h" />
     <ClInclude Include="ppu_old.h" />
     <ClInclude Include="timing.h" />
     <ClInclude Include="tms9918a.h" />
     <ClInclude Include="types.h" />
+    <ClInclude Include="util.h" />
     <ClInclude Include="v40io.h" />
     <ClInclude Include="vera.h" />
   </ItemGroup>

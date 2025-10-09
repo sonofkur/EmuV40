@@ -74,6 +74,7 @@ void doirq(uint8_t irqnum) {
 
 void init8259(void) {
 	memset((void*)&i8259, 0, sizeof(i8259));
+	// set in v40io.c
 	//set_port_write_redirector(0x20, 0x21, &out8259);
 	//set_port_read_redirector(0x20, 0x21, &in8259);
 }
