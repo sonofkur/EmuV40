@@ -71,12 +71,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\git\EmuV40\EmuV40\libs\SDL2-2.32.8\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\git\EmuV40\EmuV40\libs\SDL2-2.32.8\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)\libs\SDL2-2.32.10\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\libs\SDL2-2.32.10\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\git\EmuV40\EmuV40\libs\SDL2-2.32.8\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\git\EmuV40\EmuV40\libs\SDL2-2.32.8\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)\libs\SDL2-2.32.10\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\libs\SDL2-2.32.10\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

@@ -506,7 +506,7 @@ void emu_loop2() {
 
 		doEvents();
 
-		SDL_snprintf(tempBuffer, sizeof(tempBuffer), "V40Emu (CPU: %0.4f%%) (ROM: %s)", 0f, /*getCpuUtilization(cpuDevice) * 100.0f*/ "bios.bin");
+		SDL_snprintf(tempBuffer, sizeof(tempBuffer), "V40Emu (CPU: %0.4f%%) (ROM: %s)", 0.0f, /*getCpuUtilization(cpuDevice) * 100.0f*/ "bios.bin");
 		SDL_SetWindowTitle(tmsVDP.window, tempBuffer);
 	}
 }
