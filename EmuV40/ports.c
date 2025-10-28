@@ -3,98 +3,85 @@
 #include "ports.h"
 #include "cpu.h"
 
-//#define DEBUG_PORT_TRAFFIC
+uint8_t(*ports_cbReadB[PORTS_COUNT])(void* udata, uint32_t portnum);
+uint16_t(*ports_cbReadW[PORTS_COUNT])(void* udata, uint32_t portnum);
+void (*ports_cbWriteB[PORTS_COUNT])(void* udata, uint32_t portnum, uint8_t value);
+void (*ports_cbWriteW[PORTS_COUNT])(void* udata, uint32_t portnum, uint16_t value);
+void* ports_udata[PORTS_COUNT];
 
-uint8_t portram[0x10000];
+//extern MACHINE_t machine;
 
-
-static io_write8_cb_t  port_write_callback[0x10000];
-static io_read8_cb_t   port_read_callback[0x10000];
-static io_write16_cb_t port_write_callback16[0x10000];
-static io_read16_cb_t  port_read_callback16[0x10000];
-
-static void unknown_port_writer(uint16_t portnum, uint8_t value)
-{
-	printf("IO: unknown port OUT to %04Xh with value %02Xh\n", portnum, value);
-}
-
-static uint8_t unknown_port_reader(uint16_t portnum)
-{
-	printf("IO: unknown port IN to %04Xh\n", portnum);
-	return 0xFF;
-}
-
-static void sliced_port16_writer(uint16_t portnum, uint16_t value)
-{
-#ifdef DEBUG_PORT_TRAFFIC
-	printf("IO: writing WORD port %Xh with data %04Xh\n", portnum, value);
+void port_write(CPU* cpu, uint16_t portnum, uint8_t value) {
+#ifdef DEBUG_PORTS
+	debug_log(DEBUG_DETAIL, "port_write @ %03X <- %02X\r\n", portnum, value);
 #endif
-	portout(portnum, (uint8_t)value);
-	portout(portnum + 1, (uint8_t)(value >> 8));
-}
-
-static uint16_t sliced_port16_reader(uint16_t portnum)
-{
-	uint16_t ret = (uint16_t)portin(portnum);
-	ret |= ((uint16_t)portin(portnum + 1) << 8);
-#ifdef DEBUG_PORT_TRAFFIC
-	printf("IO: reading WORD port %Xh with result of data %04Xh\n", portnum, ret);
-#endif
-	return ret;
-}
-
-
-void ports_init(void)
-{
-	for (int a = 0; a < 0x10000; a++) {
-		port_write_callback[a] = unknown_port_writer;
-		port_read_callback[a] = unknown_port_reader;
-		port_write_callback16[a] = sliced_port16_writer;
-		port_read_callback16[a] = sliced_port16_reader;
+	portnum &= 0x0FFF;
+	if (portnum == 0x80) {
+		//debug_log(DEBUG_DETAIL, "Diagnostic port out: %02X\r\n", value);
+	}
+	if (ports_cbWriteB[portnum] != NULL) {
+		(*ports_cbWriteB[portnum])(ports_udata[portnum], portnum, value);
+		return;
 	}
 }
 
+void port_writew(CPU* cpu, uint16_t portnum, uint16_t value) {
+	portnum &= 0x0FFF;
+	if (portnum == 0x80) {
+		//debug_log(DEBUG_DETAIL, "Diagnostic port out: %04X\r\n", value);
+	}
+	if (ports_cbWriteW[portnum] != NULL) {
+		(*ports_cbWriteW[portnum])(ports_udata[portnum], portnum, value);
+		return;
+	}
+	port_write(cpu, portnum, (uint8_t)value);
+	port_write(cpu, portnum + 1, (uint8_t)(value >> 8));
+}
 
-void portout(uint16_t portnum, uint8_t value)
-{
-#ifdef DEBUG_PORT_TRAFFIC
-	printf("IO: writing BYTE port %Xh with data %02Xh\n", portnum, value);
+uint8_t port_read(CPU* cpu, uint16_t portnum) {
+#ifdef DEBUG_PORTS
+	//debug_log(DEBUG_DETAIL, "port_read @ %03X\r\n", portnum);
 #endif
-	portram[portnum] = value;
-	port_write_callback[portnum](portnum, value);
+	portnum &= 0x0FFF;
+	if (ports_cbReadB[portnum] != NULL) {
+		return (*ports_cbReadB[portnum])(ports_udata[portnum], portnum);
+	}
+
+	return 0xFF;
 }
 
-
-uint8_t portin(uint16_t portnum)
-{
-#ifdef DEBUG_PORT_TRAFFIC
-	printf("IO: reading BYTE port %Xh\n", portnum);
-#endif
-	return port_read_callback[portnum](portnum);
+uint16_t port_readw(CPU* cpu, uint16_t portnum) {
+	uint16_t ret;
+	portnum &= 0x0FFF;
+	if (ports_cbReadW[portnum] != NULL) {
+		return (*ports_cbReadW[portnum])(ports_udata[portnum], portnum);
+	}
+	ret = port_read(cpu, portnum);
+	ret |= (uint16_t)port_read(cpu, portnum + 1) << 8;
+	return ret;
 }
 
-
-void portout16(uint16_t portnum, uint16_t value)
-{
-	port_write_callback16[portnum](portnum, value);
+void ports_cbRegister(uint32_t start, uint32_t count, uint8_t(*readb)(void*, uint32_t), uint16_t(*readw)(void*, uint32_t), void (*writeb)(void*, uint32_t, uint8_t), void (*writew)(void*, uint32_t, uint16_t), void* udata) {
+	uint32_t i;
+	for (i = 0; i < count; i++) {
+		if ((start + i) >= PORTS_COUNT) {
+			break;
+		}
+		ports_cbReadB[start + i] = readb;
+		ports_cbReadW[start + i] = readw;
+		ports_cbWriteB[start + i] = writeb;
+		ports_cbWriteW[start + i] = writew;
+		ports_udata[start + i] = udata;
+	}
 }
 
-
-uint16_t portin16(uint16_t portnum)
-{
-	return port_read_callback16[portnum](portnum);
-}
-
-
-void set_port_write_redirector(uint16_t startport, uint16_t endport, io_write8_cb_t callback)
-{
-	while (startport <= endport)
-		port_write_callback[startport++] = callback;
-}
-
-
-void set_port_read_redirector(uint16_t startport, uint16_t endport, io_read8_cb_t callback)
-{
-	while (startport <= endport)
-		port_read_callback[startport++] = callback;
+void ports_init() {
+	uint32_t i;
+	for (i = 0; i < PORTS_COUNT; i++) {
+		ports_cbReadB[i] = NULL;
+		ports_cbReadW[i] = NULL;
+		ports_cbWriteB[i] = NULL;
+		ports_cbWriteW[i] = NULL;
+		ports_udata[i] = NULL;
+	}
 }

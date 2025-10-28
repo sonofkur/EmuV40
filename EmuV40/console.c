@@ -82,12 +82,12 @@ int console_thread(void* ptr) {
 		}
 		last_cmd_dump = 0;
 		if (!strcmpi(cmd, "regs")) {
-			console_printf(
+			/*console_printf(
 				"CS:IP=%04X:%04X SS:SP=%04X:%04X DS=%04X ES=%04X\n"
 				"AX=%04X BX=%04X CX=%04X DX=%04X SI=%04X DI=%04X BP=%04X\n",
 				CPU_CS, CPU_IP, CPU_SS, CPU_SP, CPU_DS, CPU_ES,
 				CPU_AX, CPU_BX, CPU_CX, CPU_DX, CPU_SI, CPU_DI, CPU_BP
-			);
+			);*/
 		}
 		else if (!strcmpi(cmd, "help")) {
 			consolehelp();

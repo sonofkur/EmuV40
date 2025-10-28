@@ -27,8 +27,8 @@ struct TMS9918ADevice_s tmsVDP;
 
 void initTMS9918A(void) {
 	memset((void*)&tmsVDP, 0, sizeof(tmsVDP));
-	set_port_write_redirector(0xA0, 0xA1, &outTMS9918A);
-	set_port_read_redirector(0xA0, 0xA1, &inTMS9918A);
+	/*set_port_write_redirector(0xA0, 0xA1, &outTMS9918A);
+	set_port_read_redirector(0xA0, 0xA1, &inTMS9918A);*/
 
 	tmsVDP.vdp = tmsNew();
 	tmsVDP.unusedTime = 0.0f;

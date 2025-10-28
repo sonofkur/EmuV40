@@ -1616,7 +1616,7 @@ char* read_file(char* name, size_t* num)
 			printf("File read error!\n");
 			exit(1);
 		}
-		num_bytes = *num;
+		num_bytes = (int)*num;
 		return buffer;
 	}
 	else

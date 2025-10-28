@@ -70,15 +70,15 @@ static void outv40io(uint16_t portnum, uint8_t value) {
 		v40.tulal = value;
 		beginAddr = ((v40.opha << 8) | (v40.tulal));
 		endAddr = beginAddr + 3;
-		set_port_write_redirector(beginAddr, endAddr, &outPIT);
-		set_port_read_redirector(beginAddr, endAddr, &inPIT);
+		/*set_port_write_redirector(beginAddr, endAddr, &outPIT);
+		set_port_read_redirector(beginAddr, endAddr, &inPIT);*/
 		break;
 	case 0x0A:
 		v40.iula = value;
 		beginAddr = ((v40.opha << 8) | (v40.iula));
 		endAddr = beginAddr + 1;
-		set_port_write_redirector(beginAddr, endAddr, &out8259);
-		set_port_read_redirector(beginAddr, endAddr, &in8259);
+		/*set_port_write_redirector(beginAddr, endAddr, &out8259);
+		set_port_read_redirector(beginAddr, endAddr, &in8259);*/
 		break;
 	case 0x0B:
 		v40.dula = value;
@@ -106,6 +106,6 @@ static void outv40io(uint16_t portnum, uint8_t value) {
 
 void initv40io(void) {
 	memset((void*)&v40, 0, sizeof(v40));
-	set_port_write_redirector(0xFFE0, 0xFFFE, &outv40io);
-	set_port_read_redirector(0xFFE0, 0xFFFE, &inv40io);
+	/*set_port_write_redirector(0xFFE0, 0xFFFE, &outv40io);
+	set_port_read_redirector(0xFFE0, 0xFFFE, &inv40io);*/
 }

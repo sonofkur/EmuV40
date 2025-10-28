@@ -13,12 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\devices">
+      <UniqueIdentifier>{30d9947f-f2c2-444c-99e3-372c72ada201}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\devices">
+      <UniqueIdentifier>{8d8d4a5d-0cff-4921-975a-03bc701aef69}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ay8910.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="console.c">
@@ -33,65 +36,74 @@
     <ClCompile Include="disasm.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="gamepad.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="i8253.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="i8255.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="i8259.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="joystick.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="kb.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="parsecl.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ports.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ppu.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ppu_old.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="timing.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tms9918a.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="v40io.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="vera.c">
+    <ClCompile Include="menus.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="f18a.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="pit.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="fdc.c">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="ay8910.c">
+      <Filter>Source Files\devices</Filter>
     </ClCompile>
     <ClCompile Include="drive.c">
+      <Filter>Source Files\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="f18a.c">
+      <Filter>Source Files\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="fdc.c">
+      <Filter>Source Files\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="gamepad.c">
+      <Filter>Source Files\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="i8253.c">
+      <Filter>Source Files\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="i8255.c">
+      <Filter>Source Files\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="i8259.c">
+      <Filter>Source Files\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="joystick.c">
+      <Filter>Source Files\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="kb.c">
+      <Filter>Source Files\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="pit.c">
+      <Filter>Source Files\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="ppu.c">
+      <Filter>Source Files\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="ppu_old.c">
+      <Filter>Source Files\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="tms9918a.c">
+      <Filter>Source Files\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="vera.c">
+      <Filter>Source Files\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="old_main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="machine.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ay8910.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -107,27 +119,6 @@
     <ClInclude Include="disasm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="gamepad.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="glue.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="i8253.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="i8255.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="i8259.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="joystick.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="kb.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="mutex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -137,16 +128,7 @@
     <ClInclude Include="ports.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ppu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ppu_old.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="timing.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tms9918a.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="types.h">
@@ -155,23 +137,62 @@
     <ClInclude Include="v40io.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="f18a.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="pit.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="fdc.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="drive.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="util.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="font.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="menus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="machine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ay8910.h">
+      <Filter>Header Files\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="f18a.h">
+      <Filter>Header Files\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="fdc.h">
+      <Filter>Header Files\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="gamepad.h">
+      <Filter>Header Files\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="i8253.h">
+      <Filter>Header Files\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="i8255.h">
+      <Filter>Header Files\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="i8259.h">
+      <Filter>Header Files\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="kb.h">
+      <Filter>Header Files\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="joystick.h">
+      <Filter>Header Files\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="pit.h">
+      <Filter>Header Files\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="ppu.h">
+      <Filter>Header Files\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="ppu_old.h">
+      <Filter>Header Files\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="tms9918a.h">
+      <Filter>Header Files\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="vera.h">
+      <Filter>Header Files\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="drive.h">
+      <Filter>Header Files\devices</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

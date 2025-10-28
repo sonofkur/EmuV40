@@ -245,8 +245,8 @@ void mousegrab_toggle() {
 
 bool vera_init(int window_scale, float screen_x_scale, char* quality, bool fullscreen, float opacity)
 {
-	set_port_write_redirector(0xC0, 0xDF, &vera_write);
-	set_port_read_redirector(0xC0, 0xDF, &vera_read);
+	/*set_port_write_redirector(0xC0, 0xDF, &vera_write);
+	set_port_read_redirector(0xC0, 0xDF, &vera_read);*/
 
 	uint32_t window_flags = SDL_WINDOW_ALLOW_HIGHDPI;
 	vera_reset();

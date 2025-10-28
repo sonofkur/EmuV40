@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>F:\electronics\v40sbc\EmuV40\x64\Debug\EmuV40.exe</FullPath>
+      <FullPath>C:\git\EmuV40\x64\Debug\EmuV40.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

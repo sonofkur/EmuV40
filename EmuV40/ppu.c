@@ -233,8 +233,8 @@ void set_loopy(LOOPY* l, uint16_t value);
 
 void ppu_init(int window_scale, char* quality, bool fullscreen) {
 
-	set_port_write_redirector(0xC0, 0xC3, &ppu_write);
-	set_port_read_redirector(0xC0, 0xC3, &ppu_read);
+	/*set_port_write_redirector(0xC0, 0xC3, &ppu_write);
+	set_port_read_redirector(0xC0, 0xC3, &ppu_read);*/
 
 	uint32_t window_flags = SDL_WINDOW_ALLOW_HIGHDPI;
 	uint32_t renderer_flags = SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC;
@@ -526,7 +526,7 @@ bool ppu_step_mode_0(uint32_t steps) {
 			if (CHECK_BIT(ppu.registers[PPU_REG_CONTROL], 7)) {
 				//cpu.nmi = 1;
 				//ppu.nmi_count++;
-				doirq(7);
+				//i8259_do_irq(7);
 			}
 		}
 		ppu_render_pixel_mode_0();

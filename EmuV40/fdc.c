@@ -82,8 +82,8 @@ static inline void reset_out_fifo(int size) {
 }
 
 void initFDC() {
-    set_port_write_redirector(0x00, 0x07, &outFDC);
-    set_port_read_redirector(0x00, 0x07, &inFDC);
+    /*set_port_write_redirector(0x00, 0x07, &outFDC);
+    set_port_read_redirector(0x00, 0x07, &inFDC);*/
 }
 
 uint8_t inFDC(uint16_t portnum) {

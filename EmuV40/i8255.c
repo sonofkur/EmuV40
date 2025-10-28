@@ -75,8 +75,8 @@ struct structi8255 i8255;
 
 void init8255(void) {
 	memset((void*)&i8255, 0, sizeof(i8255));
-	set_port_write_redirector(0x80, 0x83, &out8255);
-	set_port_read_redirector(0x80, 0x83, &in8255);
+	/*set_port_write_redirector(0x80, 0x83, &out8255);
+	set_port_read_redirector(0x80, 0x83, &in8255);*/
 
 	reset8255();
 }

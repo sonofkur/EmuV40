@@ -65,7 +65,7 @@ void timing(void)
 	if (i8253.active[0]) { //timer interrupt channel on i8253
 		if (curtick >= (lasttick + tickgap)) {
 			lasttick = curtick;
-			doirq(0);
+			//i8259_do_irq(0);
 		}
 	}
 	if (curtick >= (lasti8253tick + i8253tickgap)) {

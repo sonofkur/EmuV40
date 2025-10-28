@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-struct structpic {
+typedef struct structpic {
 	uint8_t imr; //mask register
 	uint8_t irr; //request register
 	uint8_t isr; //service register
@@ -14,14 +14,14 @@ struct structpic {
 	uint8_t autoeoi; //automatic EOI mode
 	uint8_t readmode; //remember what to return on read register from OCW3
 	uint8_t enabled;
-};
+}I8259;
 
-extern struct structpic i8259;
-extern void init8259(void);
-extern uint8_t nextintr(void);
-extern void doirq(uint8_t irqnum);
+//extern struct structpic i8259;
+void i8259_init(I8259 *pic);
+uint8_t i8259_next_intr(I8259* pic);
+void i8259_do_irq(I8259* pic, uint8_t irqnum);
 
-extern uint8_t in8259(uint16_t portnum);
-extern void out8259(uint16_t portnum, uint8_t value);
+uint8_t i8259_read(I8259* i8259, uint16_t portnum);
+void i8259_write(I8259* i8259, uint16_t portnum, uint8_t value);
 
 #endif

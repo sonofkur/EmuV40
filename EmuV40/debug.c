@@ -145,7 +145,7 @@ static int db_render_registers(void) {
 		db_string(db_renderer, DBG_LBLX, n, labels[n], col_label); n++;
 	}
 	yc++;
-	db_number(DBG_LBLX, yc, cpu.of, 1, col_data);
+	/*db_number(DBG_LBLX, yc, cpu.of, 1, col_data);
 	db_number(DBG_LBLX + 1, yc, cpu.df, 1, col_data);
 	db_number(DBG_LBLX + 2, yc, cpu.ifl, 1, col_data);
 	db_number(DBG_LBLX + 3, yc, cpu.tf, 1, col_data);
@@ -169,13 +169,13 @@ static int db_render_registers(void) {
 	db_number(DBG_DATX, yc++, cpu.segregs[regcs], 4, col_data);
 	db_number(DBG_DATX, yc++, cpu.segregs[regds], 4, col_data);
 	db_number(DBG_DATX, yc++, cpu.segregs[reges], 4, col_data);
-	db_number(DBG_DATX, yc++, cpu.segregs[regss], 4, col_data);
+	db_number(DBG_DATX, yc++, cpu.segregs[regss], 4, col_data);*/
 	return n;
 }
 
 static void db_render_stack(int bytesCount) {
 
-	int start = cpu.regs.wordregs[regsp] + 0;
+	/*int start = cpu.regs.wordregs[regsp] + 0;
 	int end = cpu.regs.wordregs[regsp] - 16;
 
 	int y = 2;
@@ -189,7 +189,7 @@ static void db_render_stack(int bytesCount) {
 		db_number(DBG_STCK + 6, y, data, 2, addr == ((cpu.segregs[regss] << 4) + cpu.regs.wordregs[regsp]) ? col_highlight : col_data);
 
 		y++;
-	}
+	}*/
 }
 
 static void db_render_code(int lines, int initialPC) {
@@ -197,23 +197,23 @@ static void db_render_code(int lines, int initialPC) {
 }
 
 static void db_render_data(int y, int data) {
-	db_string(db_renderer, DBG_MEMX, 19, "MEMORY", col_label);
-	db_string(db_renderer, DBG_MEMX, 20, "--------00-01-02-03-04-05-06-07-08-09-0A-0B-0C-0D-0E-0F", col_label);
+	//db_string(db_renderer, DBG_MEMX, 19, "MEMORY", col_label);
+	//db_string(db_renderer, DBG_MEMX, 20, "--------00-01-02-03-04-05-06-07-08-09-0A-0B-0C-0D-0E-0F", col_label);
 
-	while (y < DBG_HEIGHT - 2) {
+	//while (y < DBG_HEIGHT - 2) {
 
-		int bank = (data >> 16) & 0xF;
+	//	int bank = (data >> 16) & 0xF;
 
-		db_address(DBG_MEMX, y, bank, data & 0xFFFF, col_label);	// Show label.
+	//	db_address(DBG_MEMX, y, bank, data & 0xFFFF, col_label);	// Show label.
 
-		for (int i = 0; i < 16; i++) {
-			int byte = cpu.RAM[(data + i) & 0xFFFFF]; // real_read6502((data + i) & 0xFFFF, true, currentBank);
-			db_number(DBG_MEMX + 8 + i * 3, y, byte, 2, col_data);
-			//db_write(db_renderer, DBG_MEMX + 33 + i, y, byte, col_data);
-		}
-		y++;
-		data += 16;
-	}
+	//	for (int i = 0; i < 16; i++) {
+	//		//int byte = cpu.RAM[(data + i) & 0xFFFFF]; // real_read6502((data + i) & 0xFFFF, true, currentBank);
+	//		db_number(DBG_MEMX + 8 + i * 3, y, byte, 2, col_data);
+	//		//db_write(db_renderer, DBG_MEMX + 33 + i, y, byte, col_data);
+	//	}
+	//	y++;
+	//	data += 16;
+	//}
 }
 
 static void db_render_cmd_line(int x, int width, int height) {
@@ -225,70 +225,70 @@ static bool db_build_cmd_line(SDL_Keycode key) {
 }
 
 static void db_handle_key_event(SDL_Keycode key, int isShift) {
-	uint16_t opcode;
+	//uint16_t opcode;
 
-	switch (key) {
-	case DBGKEY_STEP:
-		currentMode = DMODE_STEP;
-		//cpu clock ticks?
-		break;
-	case DBGKEY_STEPOVER:
-		opcode = cpu.RAM[(cpu.segregs[regcs] << 4) + cpu.ip];
+	//switch (key) {
+	//case DBGKEY_STEP:
+	//	currentMode = DMODE_STEP;
+	//	//cpu clock ticks?
+	//	break;
+	//case DBGKEY_STEPOVER:
+	//	opcode = cpu.RAM[(cpu.segregs[regcs] << 4) + cpu.ip];
 
-		break;
+	//	break;
 
-	case DBGKEY_RUN:
-		currentMode = DMODE_RUN;
-		//debugCPUClocks = clockticks6502;
-		//timing_init();
-		break;
+	//case DBGKEY_RUN:
+	//	currentMode = DMODE_RUN;
+	//	//debugCPUClocks = clockticks6502;
+	//	//timing_init();
+	//	break;
 
-	case DBGKEY_SETBRK:								// F9 Set breakpoint to displayed.
-		breakPoint.ip = currentIP;
-		breakPoint.cs = currentCS;
-		break;
+	//case DBGKEY_SETBRK:								// F9 Set breakpoint to displayed.
+	//	breakPoint.ip = currentIP;
+	//	breakPoint.cs = currentCS;
+	//	break;
 
-	case DBGKEY_HOME:								// F1 sets the display PC to the actual one.
-		currentIP = cpu.ip;
-		currentCS = cpu.segregs[regcs];
-		break;
-		
-	case DBGKEY_RESET:								// F2 reset the 6502
-		cpu_reset();
-		currentIP = cpu.ip;
-		currentCS = cpu.segregs[regcs];
-		break;
+	//case DBGKEY_HOME:								// F1 sets the display PC to the actual one.
+	//	currentIP = cpu.ip;
+	//	currentCS = cpu.segregs[regcs];
+	//	break;
+	//	
+	//case DBGKEY_RESET:								// F2 reset the 6502
+	//	cpu_reset();
+	//	currentIP = cpu.ip;
+	//	currentCS = cpu.segregs[regcs];
+	//	break;
 
-	case SDLK_PAGEDOWN:
-		currentData = (currentData + 0x200) & 0xFFFFF;
-		break;
+	//case SDLK_PAGEDOWN:
+	//	currentData = (currentData + 0x200) & 0xFFFFF;
+	//	break;
 
-	case SDLK_PAGEUP:
-		currentData = (currentData - 0x200) & 0xFFFFF;
-		break;
+	//case SDLK_PAGEUP:
+	//	currentData = (currentData - 0x200) & 0xFFFFF;
+	//	break;
 
-	case SDLK_DOWN:
-		currentData = (currentData + 0x10) & 0xFFFFF;
-		break;
+	//case SDLK_DOWN:
+	//	currentData = (currentData + 0x10) & 0xFFFFF;
+	//	break;
 
-	case SDLK_UP:
-		currentData = (currentData - 0x10) & 0xFFFFF;
-		break;
+	//case SDLK_UP:
+	//	currentData = (currentData - 0x10) & 0xFFFFF;
+	//	break;
 
-	default:
-		if (db_build_cmd_line(key)) {
-			printf("cmd line: %s\n", cmdLine);
-			db_exec_cmd();
-		}
-		break;
+	//default:
+	//	if (db_build_cmd_line(key)) {
+	//		printf("cmd line: %s\n", cmdLine);
+	//		db_exec_cmd();
+	//	}
+	//	break;
 
-	}
+	//}
 }
 
 void db_break_to_debugger(void) {
-	currentMode = DMODE_STOP;
+	/*currentMode = DMODE_STOP;
 	currentIP = cpu.ip;
-	currentCS = cpu.segregs[regcs];
+	currentCS = cpu.segregs[regcs];*/
 }
 
 // *******************************************************************************************
@@ -300,58 +300,58 @@ void db_set_breakpoint(struct breakpoint newBreakPoint) {
 
 int db_get_current_status(void) {
 
-	SDL_Event event;
-	if (currentIP < 0) currentIP = cpu.ip;                                      // Initialise current PC displayed.
+	//SDL_Event event;
+	//if (currentIP < 0) currentIP = cpu.ip;                                      // Initialise current PC displayed.
 
-	if (currentMode == DMODE_STEP) {                                        // Single step before
-		//if (currentPC != regs.pc || currentPCBank != getCurrentBank(regs.pc)) {   // Ensure that the PC moved
-		//	currentPC = regs.pc;                                         // Update current PC
-		//	currentPCBank = getCurrentBank(regs.pc);                     // Update the bank if we are in upper memory.
-		//	currentMode = DMODE_STOP;                               // So now stop, as we've done it.
-		//}
-	}
+	//if (currentMode == DMODE_STEP) {                                        // Single step before
+	//	//if (currentPC != regs.pc || currentPCBank != getCurrentBank(regs.pc)) {   // Ensure that the PC moved
+	//	//	currentPC = regs.pc;                                         // Update current PC
+	//	//	currentPCBank = getCurrentBank(regs.pc);                     // Update the bank if we are in upper memory.
+	//	//	currentMode = DMODE_STOP;                               // So now stop, as we've done it.
+	//	//}
+	//}
 
-	if ((currentMode != DMODE_STOP) && (db_hit_breakpoint(cpu.ip, cpu.segregs[regcs], breakPoint) || db_hit_breakpoint(cpu.ip, cpu.segregs[regcs], stepBreakPoint))) {       // Hit a breakpoint.
-		//currentPC = regs.pc;                                                         // Update current PC
-		//currentPCBank = getCurrentBank(regs.pc);                                     // Update the bank if we are in upper memory.
-		//currentMode = DMODE_STOP;                                               // So now stop, as we've done it.
-		//stepBreakPoint.pc = -1;                                                 // Clear step breakpoint.
-		//stepBreakPoint.bank = -1;
-	}
+	//if ((currentMode != DMODE_STOP) && (db_hit_breakpoint(cpu.ip, cpu.segregs[regcs], breakPoint) || db_hit_breakpoint(cpu.ip, cpu.segregs[regcs], stepBreakPoint))) {       // Hit a breakpoint.
+	//	//currentPC = regs.pc;                                                         // Update current PC
+	//	//currentPCBank = getCurrentBank(regs.pc);                                     // Update the bank if we are in upper memory.
+	//	//currentMode = DMODE_STOP;                                               // So now stop, as we've done it.
+	//	//stepBreakPoint.pc = -1;                                                 // Clear step breakpoint.
+	//	//stepBreakPoint.bank = -1;
+	//}
 
-	if (SDL_GetKeyboardState(NULL)[DBGSCANKEY_BRK]) {                       // Stop on break pressed.
-		currentMode = DMODE_STOP;
-		//currentPC = regs.pc;                                                 // Set the PC to what it is.
-		//currentPCBank = getCurrentBank(regs.pc);                             // Update the bank if we are in upper memory.
-	}
+	//if (SDL_GetKeyboardState(NULL)[DBGSCANKEY_BRK]) {                       // Stop on break pressed.
+	//	currentMode = DMODE_STOP;
+	//	//currentPC = regs.pc;                                                 // Set the PC to what it is.
+	//	//currentPCBank = getCurrentBank(regs.pc);                             // Update the bank if we are in upper memory.
+	//}
 
-	/*if (currentPCBank < 0 && currentPC >= 0xA000) {
-		currentPCBank = currentPC < 0xC000 ? memory_get_ram_bank() : memory_get_rom_bank();
-	}*/
+	///*if (currentPCBank < 0 && currentPC >= 0xA000) {
+	//	currentPCBank = currentPC < 0xC000 ? memory_get_ram_bank() : memory_get_rom_bank();
+	//}*/
 
-	if (currentMode != DMODE_RUN) {                                         // Not running, we own the keyboard.
-		//showFullDisplay =                                               // Check showing screen.
-		//	SDL_GetKeyboardState(NULL)[DBGSCANKEY_SHOW];
-		while (SDL_PollEvent(&event)) {                                 // We now poll events here.
-			switch (event.type) {
-			case SDL_QUIT:                                  // Time for exit
-				return -1;
+	//if (currentMode != DMODE_RUN) {                                         // Not running, we own the keyboard.
+	//	//showFullDisplay =                                               // Check showing screen.
+	//	//	SDL_GetKeyboardState(NULL)[DBGSCANKEY_SHOW];
+	//	while (SDL_PollEvent(&event)) {                                 // We now poll events here.
+	//		switch (event.type) {
+	//		case SDL_QUIT:                                  // Time for exit
+	//			return -1;
 
-			case SDL_KEYDOWN:                               // Handle key presses.
-				db_handle_key_event(event.key.keysym.sym,
-					SDL_GetModState() & (KMOD_LSHIFT | KMOD_RSHIFT));
-				break;
+	//		case SDL_KEYDOWN:                               // Handle key presses.
+	//			db_handle_key_event(event.key.keysym.sym,
+	//				SDL_GetModState() & (KMOD_LSHIFT | KMOD_RSHIFT));
+	//			break;
 
-			}
-		}
-	}
+	//		}
+	//	}
+	//}
 
-	showDebugOnRender = (currentMode != DMODE_RUN);                         // Do we draw it - only in RUN mode.
-	if (currentMode == DMODE_STOP) {                                        // We're in charge.
-		//video_update();
-		SDL_Delay(10);
-		return 1;
-	}
+	//showDebugOnRender = (currentMode != DMODE_RUN);                         // Do we draw it - only in RUN mode.
+	//if (currentMode == DMODE_STOP) {                                        // We're in charge.
+	//	//video_update();
+	//	SDL_Delay(10);
+	//	return 1;
+	//}
 
 	return 0;
 }

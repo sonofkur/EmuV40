@@ -81,7 +81,7 @@ Same thing as #4, really.
 */
 int pit_get_out(struct pit_channel* pit) {
 	// Get cycles elapsed since we reloaded the count register
-	uint32_t elapsed = pit_itick_to_counter(get_now() - pit->last_load_time);
+	uint32_t elapsed = (uint32_t)pit_itick_to_counter(get_now() - pit->last_load_time);
 	if (pit->count == 0) return 0;
 	uint32_t current_counter = elapsed % pit->count; // The current value of the counter
 	switch (pit->mode) {
@@ -117,7 +117,7 @@ int pit_get_count(struct pit_channel* pit) {
 void pit_set_count(struct pit_channel* this, int v) {
 	this->last_irq_time = this->last_load_time = get_now(); //pit_get_time();
 	this->count = (!v) << 16 | v; // 0x10000 if v is 0
-	this->period = pit_counter_to_itick(this->count);
+	this->period = (uint32_t)pit_counter_to_itick(this->count);
 	this->timer_running = 1;
 	this->pit_last_count = pit_get_count(this); // should this be 0?
 }
@@ -154,7 +154,7 @@ void pit_reset(void) {
 void timer_cb(void) {
 	//pic_lower_irq(0);
 	//pic_raise_irq(0);
-	doirq(0);
+	//i8259_do_irq(0);
 }
 
 // Get the number of ticks, in the future, that the PIT needs to wait.
@@ -176,7 +176,7 @@ int pit_next(itick_t now) {
 			}
 		}
 		pit.chan[0].pit_last_count = count;
-		return pit_counter_to_itick(refill_count - count);
+		return (int)pit_counter_to_itick(refill_count - count);
 	}
 	return -1;
 }
@@ -194,11 +194,11 @@ uint8_t inPIT(uint16_t portnum) {
 		case 1: // lobyte
 		case 2: // hibyte
 			whats_latched_temp = 0;
-			retv = chan->counter_latch; // We already did the shifting before we reached this point
+			retv = (uint8_t)chan->counter_latch; // We already did the shifting before we reached this point
 			break;
 		case 3:
 			whats_latched_temp = (2 << 2) | COUNTER_LATCHED; // turn it into "hibyte", although "lobyte" could work just as well
-			retv = chan->counter_latch;
+			retv = (uint8_t)chan->counter_latch;
 			chan->counter_latch >>= 8; // get hibyte
 			break;
 		}
@@ -273,7 +273,7 @@ void outPIT(uint16_t portnum, uint8_t value) {
 						switch (chan->mode) {
 						case 2:
 							if (channel == 0)
-								doirq(0);
+								//i8259_do_irq(0);
 								//pic_raise_irq(0);
 							break;
 						}

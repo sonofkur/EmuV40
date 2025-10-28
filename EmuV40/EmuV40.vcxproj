@@ -147,7 +147,10 @@
     <ClCompile Include="i8259.c" />
     <ClCompile Include="joystick.c" />
     <ClCompile Include="kb.c" />
+    <ClCompile Include="machine.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="menus.c" />
+    <ClCompile Include="old_main.c" />
     <ClCompile Include="parsecl.c" />
     <ClCompile Include="pit.c" />
     <ClCompile Include="ports.c" />
@@ -168,13 +171,15 @@
     <ClInclude Include="drive.h" />
     <ClInclude Include="f18a.h" />
     <ClInclude Include="fdc.h" />
+    <ClInclude Include="font.h" />
     <ClInclude Include="gamepad.h" />
-    <ClInclude Include="glue.h" />
     <ClInclude Include="i8253.h" />
     <ClInclude Include="i8255.h" />
     <ClInclude Include="i8259.h" />
     <ClInclude Include="joystick.h" />
     <ClInclude Include="kb.h" />
+    <ClInclude Include="machine.h" />
+    <ClInclude Include="menus.h" />
     <ClInclude Include="mutex.h" />
     <ClInclude Include="parsecl.h" />
     <ClInclude Include="pit.h" />

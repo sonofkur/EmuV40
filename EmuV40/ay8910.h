@@ -42,4 +42,7 @@ void ay8910_write(int r, int v);
 uint8_t inAY8910(uint16_t portnum);
 void outAY8910(uint16_t portnum, uint8_t value);
 void resetAY8910();
+
+
+
 #endif

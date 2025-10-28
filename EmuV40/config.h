@@ -21,6 +21,10 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+#include <stdint.h>
+#include <stdbool.h>
+#include <SDL.h>
+
 // Filenames starting with # -> trying to locate file in various "well-known" directories (see hostfs.c)
 // Filenames starting with @ -> locate file in the preferences directory
 // Filenames otherwise       -> take filename AS-IS!!
@@ -32,20 +36,6 @@
 #define DEFAULT_IDEROM_FILE	"#ide_xt.bin"
 
 #define USE_OSD
-
-// Protect video emulation thread with a mutex when accessing screen.
-// Currently it's not needed, as other parts would effect the screen from the main thread in the old Fake86 is not used anymore.
-//#define USE_SCREEN_MUTEX
-
-// On UNIX (X11) platform, XInitThreads may be needed to use multi-threaded program.
-// Note: if you define this, it won't be used on Windows and OSX platforms, no need to worry.
-//#define USE_XINITTHREADS
-
-//#define DO_NOT_FORCE_INLINE
-//#define DO_NOT_FORCE_UNREACHABLE
-
-//#define DEBUG_BIOS_DATA_AREA_CPU_ACCESS
-
 
 //be sure to only define ONE of the CPU_* options at any given time, or
 //you will likely get some unexpected/bad results!
@@ -75,28 +65,11 @@
 
 #define TIMING_INTERVAL 15
 
-//when USE_PREFETCH_QUEUE is defined, Fake86's CPU emulator uses a 6-byte
-//read-ahead cache for opcode fetches just as a real 8086/8088 does.
-//by default, i just leave this disabled because it wastes a very very
-//small amount of CPU power. however, for the sake of more accurate
-//emulation, it can be enabled by uncommenting the line below and recompiling.
-//#define USE_PREFETCH_QUEUE
-
-//#define CPU_ADDR_MODE_CACHE
-
-//when compiled with network support, fake86 needs libpcap/winpcap.
-//if it is disabled, the ethernet card is still emulated, but no actual
-//communication is possible -- as if the ethernet cable was unplugged.
 #define NETWORKING_OLDCARD //planning to support an NE2000 in the future
 
-//when DISK_CONTROLLER_ATA is defined, fake86 will emulate a true IDE/ATA1 controller
-//card. if it is disabled, emulated disk access is handled by directly intercepting
-//calls to interrupt 13h.
-//*WARNING* - the ATA controller is not currently complete. do not use!
-//#define DISK_CONTROLLER_ATA
 
-#define AUDIO_DEFAULT_SAMPLE_RATE 48000
-#define AUDIO_DEFAULT_LATENCY 100
+#define SAMPLE_RATE		48000
+#define SAMPLE_BUFFER	4800
 
 #	define LIKELY(__x__)	(__x__)
 #	define UNLIKELY(__x__)	(__x__)
@@ -105,17 +78,43 @@
 #	define	DIRSEP_STR	"\\"
 #	define	DIRSEP_CHR	'\\'
 
-//#define DEBUG_BLASTER
+#define STR_TITLE "EmuV40"
+#define STR_VERSION "0.0.0.1"
+
+#define CPU_SPEED 8000000
+#define FRAME_CYCLE_COUNT (CPU_SPEED/60)
+#define WINDOW_TITLE "V40 Emulator"
+#define MOUSE_GRAB_MSG " (Ctrl+M to end mouse/keyboard capture)"
+
+extern bool debugger_enabled;
+extern bool console_enabled;
+extern bool trace_mode;
+//extern uint8_t running;
+extern uint8_t MHZ;
+extern bool log_video;
+extern bool enable_midline;
+extern bool warp_mode;
+extern bool grab_mouse;
+extern bool disable_emu_cmd_keys;
+extern bool reset_requested;
+extern bool hard_reset;
+
 //#define DEBUG_DMA
-
-//#define BENCHMARK_BIOS
-
-// -----------------------------------------------
-// End of configuration block, do not modify these
-// -----------------------------------------------
-
-//#ifdef DO_NOT_FORCE_UNREACHABLE
-//extern void UNREACHABLE_FATAL_ERROR(void);
-//#endif
+//#define DEBUG_VGA
+//#define DEBUG_CGA
+//#define DEBUG_PIT
+//#define DEBUG_PIC
+//#define DEBUG_PPI
+//#define DEBUG_UART
+//#define DEBUG_TCPMODEM
+//#define DEBUG_PCSPEAKER
+//#define DEBUG_MEMORY
+//#define DEBUG_PORTS
+//#define DEBUG_TIMING
+//#define DEBUG_OPL2
+//#define DEBUG_BLASTER
+//#define DEBUG_FDC
+//#define DEBUG_NE2000
+//#define DEBUG_PCAP
 
 #endif
