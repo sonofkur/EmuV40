@@ -93,13 +93,16 @@
     <ClCompile Include="tms9918a.c">
       <Filter>Source Files\devices</Filter>
     </ClCompile>
-    <ClCompile Include="vera.c">
-      <Filter>Source Files\devices</Filter>
-    </ClCompile>
     <ClCompile Include="old_main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="machine.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vera.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vera_old.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -188,11 +191,14 @@
     <ClInclude Include="tms9918a.h">
       <Filter>Header Files\devices</Filter>
     </ClInclude>
-    <ClInclude Include="vera.h">
-      <Filter>Header Files\devices</Filter>
-    </ClInclude>
     <ClInclude Include="drive.h">
       <Filter>Header Files\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="vera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vera_old.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

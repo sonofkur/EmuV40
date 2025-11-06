@@ -160,6 +160,7 @@
     <ClCompile Include="tms9918a.c" />
     <ClCompile Include="v40io.c" />
     <ClCompile Include="vera.c" />
+    <ClCompile Include="vera_old.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ay8910.h" />
@@ -192,6 +193,7 @@
     <ClInclude Include="util.h" />
     <ClInclude Include="v40io.h" />
     <ClInclude Include="vera.h" />
+    <ClInclude Include="vera_old.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

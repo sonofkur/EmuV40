@@ -16,7 +16,7 @@
 //#define TICKS_FOR_NEXT_FRAME (1000 / 60)
 //
 //uint8_t running = 1;
-//uint8_t MHZ = 8;
+uint8_t MHZ = 8;
 //bool log_video = false;
 //bool enable_midline = false;
 //bool warp_mode = false;
@@ -95,6 +95,10 @@ static uint32_t load_bios(const char* filename) {
 }
 
 
+void vera_test() {
+	vera_load_default_font(0xF000);
+}
+
 void emu_init() {
 
 	ports_init();
@@ -103,7 +107,12 @@ void emu_init() {
 	machine_reset(&machine);
 
 	load_bios("bios.bin");
+
+	starttick = SDL_GetTicks();
+
+	vera_test();
 }
+
 
 
 void emu_reset() {
@@ -167,25 +176,38 @@ static void doEvents() {
 }
 
 void emu_loop() {
-	static uint32_t lastRenderTicks = 0;
-	
-	doTick();
+	while (machine.running) {
+		uint32_t clocks = cpu_exec(&machine.cpu, 1);
+		bool new_frame = vera_step(&machine.vera, MHZ, clocks, false);
 
-	++tickCount;
-
-	uint32_t currentTicks = SDL_GetTicks();
-	if ((currentTicks - lastRenderTicks) > 17) {
-		doRender();
-
-		lastRenderTicks = currentTicks;
-		tickCount = 0;
-
-		doEvents();
-
-		SDL_snprintf(tempBuffer, sizeof(tempBuffer), "V40Emu (CPU: %0.4f%%) (ROM: %s)", 0.0f, /*getCpuUtilization(cpuDevice) * 100.0f*/ "bios.bin");
-		//SDL_SetWindowTitle(tmsVDP.window, tempBuffer);
+		if (new_frame) {
+			if (!vera_update(&machine.vera)) {
+				break;
+			}
+		}
 	}
 }
+
+//void emu_loop() {
+//	static uint32_t lastRenderTicks = 0;
+//
+//	doTick();
+//
+//	++tickCount;
+//
+//	uint32_t currentTicks = SDL_GetTicks();
+//	if ((currentTicks - lastRenderTicks) > 17) {
+//		doRender();
+//
+//		lastRenderTicks = currentTicks;
+//		tickCount = 0;
+//
+//		doEvents();
+//
+//		SDL_snprintf(tempBuffer, sizeof(tempBuffer), "V40Emu (CPU: %0.4f%%) (ROM: %s)", 0.0f, /*getCpuUtilization(cpuDevice) * 100.0f*/ "bios.bin");
+//		//SDL_SetWindowTitle(tmsVDP.window, tempBuffer);
+//	}
+//}
 
 void emu_destroy() {
 
@@ -198,7 +220,8 @@ int main(int argc, char** argv) {
 	emu_init();
 
 	cpu_int_check(&machine.cpu, &machine.i8259);
-	cpu_exec(&machine.cpu, 100000);
+	emu_loop();
+	//cpu_exec(&machine.cpu, 100000000);
 
 	/*while (machine.running) {
 		cpu_int_check(&machine.cpu, &machine.i8259);
@@ -213,8 +236,8 @@ int main(int argc, char** argv) {
 	if (endtick == 0)
 		endtick = 1; //avoid divide-by-zero exception in the code below, if ran for less than 1 second
 
-	/*printf("\n%lu instructions executed in %lu seconds.\n", (long unsigned int)cpu.totalexec, (long unsigned int)endtick);
-	printf("Average speed: %lu instructions/second.\n", (long unsigned int)(cpu.totalexec / endtick));*/
+	printf("\n%lu instructions executed in %lu seconds.\n", (long unsigned int)machine.cpu.totalexec, (long unsigned int)endtick);
+	printf("Average speed: %lu instructions/second.\n", (long unsigned int)(machine.cpu.totalexec / endtick));
 
 	//printf("NMI count: %d\n", ppu.nmi_count);
 	//printf("Frame count: %d\n", frame_count);

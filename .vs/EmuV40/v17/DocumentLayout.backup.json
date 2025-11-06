@@ -3,64 +3,40 @@
   "WorkspaceRootPath": "C:\\git\\EmuV40\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\vera.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\vera.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\vera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\vera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\ports.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\ports.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\ports.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\ports.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\i8259.c||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\i8259.c||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\ppu.c||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\ppu.c||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\i8259.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\i8259.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\cpu.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\cpu.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\machine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\machine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\machine.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\machine.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\config.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\config.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\cpu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\cpu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\machine.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\machine.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\pit.c||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\pit.c||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\machine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\machine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\timing.c||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\timing.c||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\ports.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\ports.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\disasm.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\disasm.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\i8259.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\i8259.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\debug.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\debug.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|C:\\git\\EmuV40\\EmuV40\\ports.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{55FE525B-D507-4E2C-A667-D18F53AF03CA}|EmuV40\\EmuV40.vcxproj|solutionrelative:EmuV40\\ports.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -75,19 +51,46 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "vera.c",
+              "DocumentMoniker": "C:\\git\\EmuV40\\EmuV40\\vera.c",
+              "RelativeDocumentMoniker": "EmuV40\\vera.c",
+              "ToolTip": "C:\\git\\EmuV40\\EmuV40\\vera.c*",
+              "RelativeToolTip": "EmuV40\\vera.c*",
+              "ViewState": "AgIAAKcGAAAAAAAAAAAAAK8GAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-11-03T15:45:23.976Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "vera.h",
+              "DocumentMoniker": "C:\\git\\EmuV40\\EmuV40\\vera.h",
+              "RelativeDocumentMoniker": "EmuV40\\vera.h",
+              "ToolTip": "C:\\git\\EmuV40\\EmuV40\\vera.h",
+              "RelativeToolTip": "EmuV40\\vera.h",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAADwAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-03T15:44:08.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "main.c",
               "DocumentMoniker": "C:\\git\\EmuV40\\EmuV40\\main.c",
               "RelativeDocumentMoniker": "EmuV40\\main.c",
               "ToolTip": "C:\\git\\EmuV40\\EmuV40\\main.c",
               "RelativeToolTip": "EmuV40\\main.c",
-              "ViewState": "AgIAALIAAAAAAAAAAAAUwMQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAAAAAMcAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-10-09T17:06:35.085Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "ports.c",
               "DocumentMoniker": "C:\\git\\EmuV40\\EmuV40\\ports.c",
               "RelativeDocumentMoniker": "EmuV40\\ports.c",
@@ -100,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "ports.h",
               "DocumentMoniker": "C:\\git\\EmuV40\\EmuV40\\ports.h",
               "RelativeDocumentMoniker": "EmuV40\\ports.h",
@@ -113,46 +116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "i8259.c",
-              "DocumentMoniker": "C:\\git\\EmuV40\\EmuV40\\i8259.c",
-              "RelativeDocumentMoniker": "EmuV40\\i8259.c",
-              "ToolTip": "C:\\git\\EmuV40\\EmuV40\\i8259.c",
-              "RelativeToolTip": "EmuV40\\i8259.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-10-28T18:11:12.012Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ppu.c",
-              "DocumentMoniker": "C:\\git\\EmuV40\\EmuV40\\ppu.c",
-              "RelativeDocumentMoniker": "EmuV40\\ppu.c",
-              "ToolTip": "C:\\git\\EmuV40\\EmuV40\\ppu.c",
-              "RelativeToolTip": "EmuV40\\ppu.c",
-              "ViewState": "AgIAANgAAAAAAAAAAADwv+wAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-10-28T18:11:36.721Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "timing.c",
-              "DocumentMoniker": "C:\\git\\EmuV40\\EmuV40\\timing.c",
-              "RelativeDocumentMoniker": "EmuV40\\timing.c",
-              "ToolTip": "C:\\git\\EmuV40\\EmuV40\\timing.c",
-              "RelativeToolTip": "EmuV40\\timing.c",
-              "ViewState": "AgIAADAAAAAAAAAAAADwv0QAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-10-28T18:11:36.736Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "i8259.h",
               "DocumentMoniker": "C:\\git\\EmuV40\\EmuV40\\i8259.h",
               "RelativeDocumentMoniker": "EmuV40\\i8259.h",
@@ -165,106 +129,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 3,
               "Title": "config.h",
               "DocumentMoniker": "C:\\git\\EmuV40\\EmuV40\\config.h",
               "RelativeDocumentMoniker": "EmuV40\\config.h",
               "ToolTip": "C:\\git\\EmuV40\\EmuV40\\config.h",
               "RelativeToolTip": "EmuV40\\config.h",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAAAFsAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAFwAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-10-28T18:05:03.576Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "disasm.c",
-              "DocumentMoniker": "C:\\git\\EmuV40\\EmuV40\\disasm.c",
-              "RelativeDocumentMoniker": "EmuV40\\disasm.c",
-              "ToolTip": "C:\\git\\EmuV40\\EmuV40\\disasm.c",
-              "RelativeToolTip": "EmuV40\\disasm.c",
-              "ViewState": "AgIAAD8GAAAAAAAAAADwv1AGAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-10-28T17:52:44.433Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "debug.c",
-              "DocumentMoniker": "C:\\git\\EmuV40\\EmuV40\\debug.c",
-              "RelativeDocumentMoniker": "EmuV40\\debug.c",
-              "ToolTip": "C:\\git\\EmuV40\\EmuV40\\debug.c",
-              "RelativeToolTip": "EmuV40\\debug.c",
-              "ViewState": "AgIAAC8BAAAAAAAAAAAAwFgBAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-10-28T17:49:50.669Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "cpu.c",
-              "DocumentMoniker": "C:\\git\\EmuV40\\EmuV40\\cpu.c",
-              "RelativeDocumentMoniker": "EmuV40\\cpu.c",
-              "ToolTip": "C:\\git\\EmuV40\\EmuV40\\cpu.c",
-              "RelativeToolTip": "EmuV40\\cpu.c",
-              "ViewState": "AgIAAIQOAAAAAAAAAADwv6AOAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-10-28T15:47:17.683Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "machine.c",
               "DocumentMoniker": "C:\\git\\EmuV40\\EmuV40\\machine.c",
               "RelativeDocumentMoniker": "EmuV40\\machine.c",
               "ToolTip": "C:\\git\\EmuV40\\EmuV40\\machine.c",
               "RelativeToolTip": "EmuV40\\machine.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-10-28T15:32:58.361Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "cpu.h",
-              "DocumentMoniker": "C:\\git\\EmuV40\\EmuV40\\cpu.h",
-              "RelativeDocumentMoniker": "EmuV40\\cpu.h",
-              "ToolTip": "C:\\git\\EmuV40\\EmuV40\\cpu.h",
-              "RelativeToolTip": "EmuV40\\cpu.h",
-              "ViewState": "AgIAAG0AAAAAAAAAAAAAAI8AAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-28T15:32:07.34Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "machine.h",
               "DocumentMoniker": "C:\\git\\EmuV40\\EmuV40\\machine.h",
               "RelativeDocumentMoniker": "EmuV40\\machine.h",
               "ToolTip": "C:\\git\\EmuV40\\EmuV40\\machine.h",
               "RelativeToolTip": "EmuV40\\machine.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-10-28T15:32:01.247Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "pit.c",
-              "DocumentMoniker": "C:\\git\\EmuV40\\EmuV40\\pit.c",
-              "RelativeDocumentMoniker": "EmuV40\\pit.c",
-              "ToolTip": "C:\\git\\EmuV40\\EmuV40\\pit.c",
-              "RelativeToolTip": "EmuV40\\pit.c",
-              "ViewState": "AgIAAPQAAAAAAAAAAADwvxABAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-10-28T18:11:36.705Z",
               "EditorCaption": ""
             }
           ]
