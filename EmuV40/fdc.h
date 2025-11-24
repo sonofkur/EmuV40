@@ -45,7 +45,7 @@
 #define MSR_ACTB 0x02
 #define MSR_ACTA 0x01
 
-struct fdc {
+typedef struct structfdc {
     // <<< BEGIN STRUCT "struct" >>>
     /// ignore: dmabuf, drives
     uint8_t status[2]; // 3F0/3F1
@@ -103,26 +103,26 @@ struct fdc {
 
     uint8_t dmabuf[16 << 10];
     // <<< END STRUCT "struct" >>>
-};
+}FDC;
 
-extern struct fdc fdc;
+//extern struct fdc fdc;
 
-extern void initFDC();
-extern uint8_t inFDC(uint16_t portnum);
-extern void outFDC(uint16_t portnum, uint8_t value);
+void fdc_init(FDC* fdc);
+uint8_t fdc_in(FDC* fdc, uint16_t portnum);
+void fdc_out(FDC* fdc, uint16_t portnum, uint8_t value);
 
-void fdc_set_st0(int bits);
-int fdc_get_st0(void);
-void fdc_abort_command(void);
-void fdc_abort_command2(void);
-void fdc_read_cb(void* a, int b);
-void fdc_write_cb(void* a, int b);
-void fdc_idle(void);
-void fdc_handle_format(void* a, int b);
-int floppy_next(uint64_t now);
-void* fdc_dma_buf(void);
-void fdc_dma_complete(void);
-void fdc_replace_drive(int idx, struct drive_info* drive);
-void fdc_init(struct pc_settings* pc);
+void fdc_set_st0(FDC* fdc, int bits);
+int fdc_get_st0(FDC* fdc);
+void fdc_abort_command(FDC* fdc);
+void fdc_abort_command2(FDC* fdc);
+void fdc_read_cb(FDC* fdc, void* a, int b);
+void fdc_write_cb(FDC* fdc, void* a, int b);
+void fdc_idle(FDC* fdc);
+void fdc_handle_format(FDC* fdc, void* a, int b);
+int fdc_next(FDC* fdc, uint64_t now);
+void* fdc_dma_buf(FDC* fdc);
+void fdc_dma_complete(FDC* fdc);
+void fdc_replace_drive(FDC* fdc, int idx, struct drive_info* drive);
+void fdc_init(FDC* fdc, struct pc_settings* pc);
 
 #endif

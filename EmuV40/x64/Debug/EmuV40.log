@@ -1,2 +1,9 @@
-﻿  vera.c
-  EmuV40.vcxproj -> C:\git\EmuV40\x64\Debug\EmuV40.exe
+﻿  fdc.c
+C:\git\EmuV40\EmuV40\fdc.h(126,6): warning C4031: second formal parameter list longer than the first list
+  (compiling source file 'fdc.c')
+  
+C:\git\EmuV40\EmuV40\fdc.c(84,6): warning C4029: declared formal parameter list different from definition
+C:\git\EmuV40\EmuV40\fdc.c(697,6): error C2084: function 'void fdc_init(FDC *)' already has a body
+      C:\git\EmuV40\EmuV40\fdc.c(84,6):
+      see previous definition of 'fdc_init'
+  

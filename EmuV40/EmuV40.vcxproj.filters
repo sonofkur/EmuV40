@@ -60,9 +60,6 @@
     <ClCompile Include="f18a.c">
       <Filter>Source Files\devices</Filter>
     </ClCompile>
-    <ClCompile Include="fdc.c">
-      <Filter>Source Files\devices</Filter>
-    </ClCompile>
     <ClCompile Include="gamepad.c">
       <Filter>Source Files\devices</Filter>
     </ClCompile>
@@ -103,6 +100,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="vera_old.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fdc.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -158,9 +158,6 @@
     <ClInclude Include="f18a.h">
       <Filter>Header Files\devices</Filter>
     </ClInclude>
-    <ClInclude Include="fdc.h">
-      <Filter>Header Files\devices</Filter>
-    </ClInclude>
     <ClInclude Include="gamepad.h">
       <Filter>Header Files\devices</Filter>
     </ClInclude>
@@ -198,6 +195,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="vera_old.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fdc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1708,8 +1708,8 @@ void vera_load_default_font(uint32_t addr) {
 	vera_write(&machine.vera, 0x02, 0b00010001); //ctrl L0 enabled, display on
 	vera_write(&machine.vera, 0x02, 0); //ien
 	vera_write(&machine.vera, 0x02, 0); //irq line l
-	vera_write(&machine.vera, 0x02, 64); //hscale
-	vera_write(&machine.vera, 0x02, 64); //vscale
+	vera_write(&machine.vera, 0x02, 128); //hscale
+	vera_write(&machine.vera, 0x02, 128); //vscale
 	vera_write(&machine.vera, 0x02, 0); //border
 
 
@@ -1735,22 +1735,9 @@ void vera_load_default_font(uint32_t addr) {
 	vera_write(&machine.vera, 0x2, 0x01);
 	vera_write(&machine.vera, 0x2, '0');
 	vera_write(&machine.vera, 0x2, 0x01);
+	vera_write(&machine.vera, 0x2, '!');
+	vera_write(&machine.vera, 0x2, 0x07);
 
-	/*vera_write(0, 0);
-	vera_write(1, 0);
-	vera_write(2, 0b00010000);
-	vera_write(3, 'H');
-	vera_write(3, 0x01);
-	vera_write(3, 'e');
-	vera_write(3, 0x01);
-	vera_write(3, 'l');
-	vera_write(3, 0x01);
-	vera_write(3, 'l');
-	vera_write(3, 0x01);
-	vera_write(3, 'o');
-	vera_write(3, 0x01);
-	vera_write(3, '!');
-	vera_write(3, 0x01);*/
 }
 
 
